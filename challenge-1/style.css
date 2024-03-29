@@ -1,0 +1,57 @@
+/* boilerplate css */
+/* untuk merapihkan awalan untuk semua project */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    width: 81.11%;
+    background-color: transparent;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.nav-item {
+    margin-left: 30px;
+}
+
+.nav-item a {
+    color: black;
+}
+
+.button {
+    padding: 8px 16px;
+    color: white;
+    background-color: #5CB85F;
+    border: none;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: #4CAF50;
+}
+
+.owl-next,
+.owl-prev {
+    margin-top: 20px;
+    border: 2px solid gainsboro;
+    background-color: white;
+    border-radius: 50%;
+    padding: 8px 16px;
+    color: black;
+}
+
+.owl-next:hover,
+.owl-prev:hover {
+    background-color: #5CB85F;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+}

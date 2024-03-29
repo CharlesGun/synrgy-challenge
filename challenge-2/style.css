@@ -1,0 +1,301 @@
+/* boilerplate css */
+/* untuk merapihkan awalan untuk semua project */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav {
+  width: 81.11%;
+  background-color: transparent;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.nav-item {
+  margin-left: 30px;
+}
+
+.nav-item a {
+  color: black;
+}
+
+.button {
+  padding: 8px 16px;
+  color: white;
+  background-color: #5cb85f;
+  border: none;
+  border-radius: 4px;
+  max-width: 20%;
+}
+
+.button:hover {
+  background-color: #4caf50;
+}
+
+/* testimonial section style */
+.testimonial {
+  background-color: #ffffff;
+  width: 100%;
+  height: fit-content;
+}
+
+.star {
+  color: #f9cc00;
+  font-size: 30px;
+}
+
+.testimonial .item {
+  background-color: #f1f3ff;
+  /* memberi jarak padding untuk atas bawah 10px dan kiri kanan 30px */
+  padding: 50px 30px;
+  /* ujung agar tidak lancip */
+  border-radius: 8px;
+}
+
+.owl-item .item .row {
+  height: 250px;
+}
+
+.owl-next,
+.owl-prev {
+  margin-top: 20px;
+  border: 2px solid gainsboro;
+  background-color: white;
+  border-radius: 50%;
+  padding: 8px 16px;
+  color: black;
+}
+
+.owl-next:hover,
+.owl-prev:hover {
+  background-color: #5cb85f;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+@media screen and (min-width: 800px) {
+  .nav-item {
+    margin-left: 0;
+  }
+
+  .hero {
+    height: 600px;
+    padding-top: 20px;
+  }
+
+  .img_car {
+    position: absolute;
+    right: -89px;
+    bottom: -170px;
+  }
+
+  .button {
+    max-width: 100%;
+  }
+
+  .owl-next,
+  .owl-prev {
+    padding: 8px 16px;
+  }
+
+  #sidebar {
+    display: none;
+  }
+
+  .items-faq {
+    display: flex;
+    flex-direction: row !important;
+  }
+
+
+}
+
+@media screen and (max-width: 800px) {
+  .hero {
+    height: 100vh;
+    padding-top: 20px;
+  }
+
+  .items-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .our-services {
+    height: 100vh;
+    padding: 20px 0;
+  }
+
+  #why-us {
+    height: 100vh;
+    padding: 20px 0;
+  }
+
+  .item-service {
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .img_service,
+  .img_car {
+    max-width: 400px;
+  }
+
+  .nav-item {
+    margin-left: 0;
+  }
+
+  .button {
+    max-width: 100%;
+  }
+
+  .owl-next,
+  .owl-prev {
+    padding: 8px 16px;
+  }
+
+  .why-content {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  #btn-side {
+    width: 100%;
+  }
+
+  footer .col {
+    margin-left: 20px;
+  }
+
+  #why-respon-data {
+    display: flex;
+    flex-direction: column !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero {
+    height: 80vh;
+  }
+
+  .our-services {
+    height: calc(100vh - 30px);
+    padding: 20px 0;
+  }
+
+  #why-us {
+    height: 80vh;
+    padding: 20px 0;
+  }
+
+  .img_car {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 400px;
+  }
+
+  .img_service {
+    max-width: 400px;
+  }
+
+  .button {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .button {
+    padding: 8px 8px;
+  }
+
+  .hero {
+    height: 93vh;
+  }
+
+  .items-hero {
+    height: 100%;
+  }
+
+  .img_car {
+    position: absolute;
+    right: -17.7px;
+    bottom: 0px;
+    max-width: 370px;
+  }
+
+  .img_service {
+    max-width: 250px;
+  }
+
+  .items-banner {
+    width: 90% !important;
+  }
+
+  .card-body p {
+    width: 90% !important;
+  }
+
+  #why-us {
+    height: auto; /* Remove fixed height */
+  }
+
+  .testimonial {
+    height: auto; /* Remove fixed height */
+  }
+
+  .testimonial .item {
+    padding: 30px; /* Reduce padding for testimonial items */
+  }
+
+  .testimonial-image {
+    width: 90px !important; /* Make testimonial images fill the width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Add some space between image and text */
+  }
+
+  div.star {
+    align-self: center;
+    margin-bottom: 20px;
+  }
+
+  span.star{
+    font-size: 20px;
+  }
+
+  .owl-item .item .row {
+    height: auto; /* Adjust row height dynamically */
+  }
+
+  .owl-item.active {
+    margin: 0px !important;
+  }
+
+  /* .owl-item .item .row { 
+    height: 380px; 
+  }  */
+  .owl-item .item { 
+    margin: 20px; 
+  } 
+
+  .items-faq {
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .items-footer {
+    display: flex;
+    flex-direction: column !important;
+  }
+
+}
