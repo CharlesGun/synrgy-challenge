@@ -1,0 +1,16 @@
+<div class="overlay-dialog">
+    <div class="dialog-box bg-white d-flex flex-column justify-content-center align-items-center w-25">
+        <div class="mb-4">
+            <img src="../public/image/dialog.png" alt="broom">
+        </div>
+        <div class="w-75 mx-auto text-center">
+            <p class="fw-bold">Menghapus Data Mobil</p>
+            <p>Setelah dihapus, data mobil tidak dapat dikembalikan. Yakin ingin menghapus?</p>
+        </div>
+        <div class="w-100 d-flex justify-content-center mb-2 gap-5">
+            <form action="/cars/<%= car.id %>?_method=delete" method="post" class="w-25"><button
+                    class="dialect-button button-yes w-100 fw-bold">Ya</button></form>
+            <button class="dialect-button button-no w-25 fw-bold">Tidak</button>
+        </div>
+    </div>
+</div>
