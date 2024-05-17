@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binar Car Rental</title>
+    <link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body class="bg-body-secondary">
+    <div class="w-100">
+        <div class="w-100">
+            <%- include('utils/navbar') %>
+        </div>
+        <div class="container">
+            <h1 class="fw-bold fs-3 my-4">Dashboard</h1>
+            <div class="table-order">
+                <h3>List Order</h3>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>
+                                No
+                            </th>
+                            <th>
+                                User Email
+                            </th>
+                            <th>
+                                Car
+                            </th>
+                            <th>
+                                Start Rent
+                            </th>
+                            <th>
+                                Finish Rent
+                            </th>
+                            <th>
+                                Total Price
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% orders.thisPageData.forEach((order, index) => { %>
+                        <tr>
+                            <td>
+                                <%= index + 1 %>
+                            </td>
+                            <td>
+                                <%= order.user.email %>
+                            </td>
+                            <td>
+                                <%= order.car.name %>
+                            </td>
+                            <td>
+                                <%= order.start_date %>
+                            </td>
+                            <td>
+                                <%= order.end_date %>
+                            </td>
+                            <td>
+                                <%= order.total_price %>
+                            </td>
+                            <td>
+                                <%= order.status %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <% if(!orders.prev){%>
+                        <li class="page-item disabled">
+                            <a class="page-link" href=""
+                                aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                            <% } else {%>
+                        <li class="page-item">
+                            <a class="page-link" href="/dashboard/orders-list?page=<%=orders.prev.page%>"
+                                aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <% }%>
+                        <% for (let i = 1; i <= orders.totalPages; i++) { %>
+                        <li class="page-item <%= orders.currentPage === i ? 'active' : '' %>">
+                            <a class="page-link" href="/dashboard/orders-list?page=<%= i %>"><%= i %></a>
+                        </li>
+                        <% } %>
+                        <% if(!orders.next){%>
+                        <li class="page-item disabled">
+                            <a class="page-link" href=""
+                                aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                            <% } else {%>
+                        <li class="page-item">
+                            <a class="page-link" href="/dashboard/orders-list?page=<%=orders.next.page%>"
+                                aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                        <% }%>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+    <script src="/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

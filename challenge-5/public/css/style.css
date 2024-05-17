@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-login {
+    height: 100vh;
+}
+
+.logo {
+    padding: 16px 8px 16px 8px;
+    background: #CFD4ED;
+    width: 20%;
+}
+
+.form-button {
+    background: #0D28A6;
+    width: 100%;
+    height: 35px;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.card {
+    width: 250px;
+    height: 410px;
+}
+
+.car-image img {
+    width: 100%;
+    height: 150px;
+}
+
+.card-button {
+    border: none;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    height: 40px;
+}
+
+.delete {
+    width: 45%;
+    background: none;
+    border: red 1px solid;
+    color: red;
+}
+
+.edit {
+    width: 45%;
+    background: #5CB85F;
+    color: white;
+}
+
+.overlay-dialog {
+    background: rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-box {
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    height: 350px;
+}
+
+.dialect-button {
+    border: none;
+    border-radius: 2px;
+    height: 40px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+.button-yes {
+    background: #0D28A6;
+    color: white;
+}
+
+.button-no {
+    background: white;
+    border: #0D28A6 1px solid;
+    color: #0D28A6;
+}
+
+.card-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.card-text {
+    font-size: 14px;
+}
