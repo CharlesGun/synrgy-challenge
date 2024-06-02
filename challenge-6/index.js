@@ -15,6 +15,15 @@ app.use(express.urlencoded({
     extended: false
 }));
 app.use('/public', express.static(path.join(__dirname, 'public')));
+app.get('/', (req, res) => {
+    res.json({
+        status: true,
+        message: 'Welcome to my API'
+    });
+});
+app.get('/api/docs', (req, res) => {
+    res.redirect('https://documenter.getpostman.com/view/29497408/2sA3QwbpRP');
+});
 app.use('/api', router);
 
 app.use((err, req, res, next) => {

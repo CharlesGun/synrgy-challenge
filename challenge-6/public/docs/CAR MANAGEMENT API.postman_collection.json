@@ -1,0 +1,1465 @@
+{
+	"info": {
+		"_postman_id": "7f388477-25bf-4c1f-8aff-13598ca36fb5",
+		"name": "CAR MANAGEMENT API - Charles Gunawan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29497408"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicm9sZSI6bnVsbCwiaWF0IjoxNzE2MzgyNTMyLCJleHAiOjE3MTY0Njg5MzJ9.vBPCgPNvZ6_VgLjFpYBGcIzexvSFs14BdrLqN04KMk0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/users",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/users",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "985"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3d9-3Oim2+3lByLA0ANo91mdhcFEVBA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jun 2024 03:06:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Users retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 4,\n            \"email\": \"user2@gmail.com\",\n            \"name\": \"user2\",\n            \"createdAt\": \"2024-05-31T10:11:46.917Z\",\n            \"updatedAt\": \"2024-05-31T10:11:46.917Z\"\n        },\n        {\n            \"id\": 3,\n            \"email\": \"user@gmail.com\",\n            \"name\": \"user\",\n            \"createdAt\": \"2024-05-31T10:00:20.282Z\",\n            \"updatedAt\": \"2024-05-31T10:12:00.774Z\"\n        },\n        {\n            \"id\": 1,\n            \"email\": \"admin@gmail.com\",\n            \"name\": \"admin\",\n            \"createdAt\": \"2024-05-31T10:00:20.166Z\",\n            \"updatedAt\": \"2024-05-31T11:03:55.559Z\"\n        },\n        {\n            \"id\": 5,\n            \"email\": \"admin2@gmail.com\",\n            \"name\": \"admin2\",\n            \"createdAt\": \"2024-05-31T12:44:28.245Z\",\n            \"updatedAt\": \"2024-05-31T12:44:28.245Z\"\n        },\n        {\n            \"id\": 6,\n            \"email\": \"usertesting@gmail.com\",\n            \"name\": \"usertesting\",\n            \"createdAt\": \"2024-06-02T02:46:42.009Z\",\n            \"updatedAt\": \"2024-06-02T02:59:27.564Z\"\n        },\n        {\n            \"id\": 2,\n            \"email\": \"superadmin@gmail.com\",\n            \"name\": \"superadmin\",\n            \"createdAt\": \"2024-05-31T10:00:20.223Z\",\n            \"updatedAt\": \"2024-06-02T03:05:21.445Z\"\n        },\n        {\n            \"id\": 7,\n            \"email\": \"admin3@gmail.com\",\n            \"name\": \"admin3\",\n            \"createdAt\": \"2024-06-02T03:05:51.725Z\",\n            \"updatedAt\": \"2024-06-02T03:05:51.725Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "create user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AZ21haWwuY29tIiwicm9sZSI6InN1cGVyYWRtaW4iLCJpYXQiOjE3MTYyOTk5MTgsImV4cCI6MTcxNjM4NjMxOH0.8rGNiYH1o_G5XgwNCJ4cG0g6b2pcv7tj9S8F9kpZess",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"admin3\",\r\n    \"email\": \"admin3@gmail.com\",\r\n    \"password\": \"admin3\",\r\n    \"role\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/users",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Super admin can create user with 'admin' or 'user' (member) role. But Admin only can create user with 'user' (member) role."
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"admin3\",\r\n    \"email\": \"admin3@gmail.com\",\r\n    \"password\": \"admin3\",\r\n    \"role\": \"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/users",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "300"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12c-IyC8h9VsTqUHHUFtrrxH0Gij2Uo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jun 2024 03:05:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User created successfully\",\n    \"data\": {\n        \"id\": 7,\n        \"name\": \"admin3\",\n        \"email\": \"admin3@gmail.com\",\n        \"password\": \"$2b$10$dYsCdA1VaFNHzTbqbXLnAe96VXyD0B6oOHuq1DGiGzkCWRYZQyqdW\",\n        \"role\": \"admin\",\n        \"updatedAt\": \"2024-06-02T03:05:51.725Z\",\n        \"createdAt\": \"2024-06-02T03:05:51.725Z\",\n        \"refresh_token\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get user by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AZ21haWwuY29tIiwicm9sZSI6InN1cGVyYWRtaW4iLCJpYXQiOjE3MTYyOTk5MTgsImV4cCI6MTcxNjM4NjMxOH0.8rGNiYH1o_G5XgwNCJ4cG0g6b2pcv7tj9S8F9kpZess",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/users/3",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/users/3",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "188"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bc-AZRTWd2azhn4xiwQFAnXZ3OMmYE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jun 2024 03:22:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User retrieved successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"email\": \"user@gmail.com\",\n        \"name\": \"user\",\n        \"createdAt\": \"2024-05-31T10:00:20.282Z\",\n        \"updatedAt\": \"2024-05-31T10:12:00.774Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTYzMDAxMDQsImV4cCI6MTcxNjM4NjUwNH0.S26fzV_xN5pnKFr4ciKBdDWzLThFTl4Zejgcap3q9cI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"useredited\",\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"user\",\r\n    \"role\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/users/3",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"useredited\",\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"user\",\r\n    \"role\": \"user\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/users/3",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "451"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c3-whWYKHEICSrLyRxA+cIIcrnfnhY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jun 2024 03:23:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User updated successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"email\": \"user@gmail.com\",\n        \"password\": \"user\",\n        \"name\": \"useredited\",\n        \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTcxNTAzMjAsImV4cCI6MTcxNzc1NTEyMH0.kkn4o1wLYr5pkZpwCL9q99ODcQekXaPzs_P-R9px4Jc\",\n        \"role\": \"user\",\n        \"createdAt\": \"2024-05-31T10:00:20.282Z\",\n        \"updatedAt\": \"2024-06-02T03:23:16.250Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTYzMDAxMDQsImV4cCI6MTcxNjM4NjUwNH0.S26fzV_xN5pnKFr4ciKBdDWzLThFTl4Zejgcap3q9cI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/users/3",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/users/6",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35-Lch//JEdeh3rQke/0geafI+77NA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jun 2024 03:23:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User deleted successfully\"\n}"
+						}
+					]
+				}
+			],
+			"description": "All the requests for users need admin/superadmin authorization."
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"usertesting\",\r\n    \"email\": \"usertesting@gmail.com\",\r\n    \"password\": \"usertesting\",\r\n    \"rePassword\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/auth/register",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"usertesting\",\r\n    \"email\": \"usertesting@gmail.com\",\r\n    \"password\": \"usertesting\",\r\n    \"rePassword\": \"usertesting\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/auth/register",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "309"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"135-HtOZO2Zg1yslml2CRQoFVZUYmEs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jun 2024 02:46:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User created successfully\",\n    \"data\": {\n        \"id\": 6,\n        \"name\": \"usertesting\",\n        \"email\": \"usertesting@gmail.com\",\n        \"password\": \"$2b$10$AVObhSJjV32v4zG2uzPnk.dxIm.Futb0UZZoJBRLxs2kX39XEn6Tu\",\n        \"role\": \"user\",\n        \"updatedAt\": \"2024-06-02T02:46:42.009Z\",\n        \"createdAt\": \"2024-06-02T02:46:42.009Z\",\n        \"refresh_token\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"usertesting@gmail.com\",\r\n    \"password\": \"usertesting\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/auth/login",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"usertesting@gmail.com\",\r\n    \"password\": \"usertesting\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/auth/login",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6InVzZXJ0ZXN0aW5nIiwiZW1haWwiOiJ1c2VydGVzdGluZ0BnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNzI5NjQ0MiwiZXhwIjoxNzE3OTAxMjQyfQ.gv9f_vj-p7ZdXRWAoZwBz_dYxv3PfpFy1iFhi9GwZ6I; Max-Age=604800; Path=/; Expires=Sun, 09 Jun 2024 02:47:22 GMT; HttpOnly"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "308"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"134-uQ72hOLn5z5a3HaGV0Y2DyYt5x4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jun 2024 02:47:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User logged in successfully\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6InVzZXJ0ZXN0aW5nIiwiZW1haWwiOiJ1c2VydGVzdGluZ0BnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNzI5NjQ0MiwiZXhwIjoxNzE3MzgyODQyfQ.9LlMsKq4X9bj8cOtfTN91LugHArkbFwqSirq_6noZiI\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "log out",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/auth/logout",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/auth/logout",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"38-moLS29DaGBe/cuEqfJq78a3L5qs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jun 2024 02:54:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User logged out successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "refresh token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/auth/token",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/auth/token",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "314"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13a-S7BdjGGaoebs9ffYCI8CubmWwvA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jun 2024 03:03:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Access token created successfully\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6InVzZXJ0ZXN0aW5nIiwiZW1haWwiOiJ1c2VydGVzdGluZ0BnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNzI5NzM5NiwiZXhwIjoxNzE3MzgzNzk2fQ.UmeS0S6da9Nx4cQG87J5onNkSS4GzGwpEyHJNnPxBw4\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "whoami",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicm9sZSI6bnVsbCwiaWF0IjoxNzE2MzgyNDM1LCJleHAiOjE3MTY0Njg4MzV9.wwBLCyjaiysJpSzJvbjSwQw2-BeSYoEiml83o5pRN7M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/auth/whoami",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"whoami"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/auth/whoami",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"whoami"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "536"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"218-azEp2rm2XV19i8m0d22x4rwHT9M\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jun 2024 03:04:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User retrieved successfully\",\n    \"data\": {\n        \"id\": 6,\n        \"email\": \"usertesting@gmail.com\",\n        \"password\": \"$2b$10$AVObhSJjV32v4zG2uzPnk.dxIm.Futb0UZZoJBRLxs2kX39XEn6Tu\",\n        \"name\": \"usertesting\",\n        \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6InVzZXJ0ZXN0aW5nIiwiZW1haWwiOiJ1c2VydGVzdGluZ0BnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNzI5NzE2NywiZXhwIjoxNzE3OTAxOTY3fQ.4ToBXOj4Gh5Kg9IZtCuJoD_rk5y4czN3IrW4B3OP4Jo\",\n        \"role\": \"user\",\n        \"createdAt\": \"2024-06-02T02:46:42.009Z\",\n        \"updatedAt\": \"2024-06-02T02:59:27.564Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cars",
+			"item": [
+				{
+					"name": "get all cars",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AZ21haWwuY29tIiwicm9sZSI6InN1cGVyYWRtaW4iLCJpYXQiOjE3MTcyOTc1MjEsImV4cCI6MTcxNzM4MzkyMX0.BGLrf2tpXjVhOOr_8VPeyX5V9oDZAz0MHT_XUm_KMdk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/cars",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"cars"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/cars",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"cars"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1109"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"455-Ss7dLcgH88guxfkW9bhAQPNvGI8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jun 2024 03:27:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Cars retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 5,\n            \"name\": \"Xenia\",\n            \"category\": \"SUV\",\n            \"price\": 10000000,\n            \"image\": \"http://localhost:3000/public\\\\uploads\\\\1717298785764.jpg\",\n            \"is_deleted\": false,\n            \"created_by\": 2,\n            \"updated_by\": 2,\n            \"deleted_by\": null,\n            \"createdAt\": \"2024-06-02T03:26:25.774Z\",\n            \"updatedAt\": \"2024-06-02T03:26:25.774Z\",\n            \"creator\": {\n                \"id\": 2,\n                \"email\": \"superadmin@gmail.com\",\n                \"name\": \"superadmin\",\n                \"role\": \"superadmin\",\n                \"createdAt\": \"2024-05-31T10:00:20.223Z\",\n                \"updatedAt\": \"2024-06-02T03:05:21.445Z\"\n            },\n            \"updater\": {\n                \"id\": 2,\n                \"email\": \"superadmin@gmail.com\",\n                \"name\": \"superadmin\",\n                \"role\": \"superadmin\",\n                \"createdAt\": \"2024-05-31T10:00:20.223Z\",\n                \"updatedAt\": \"2024-06-02T03:05:21.445Z\"\n            },\n            \"deleter\": null\n        },\n        {\n            \"id\": 3,\n            \"name\": \"SUPRA Z\",\n            \"category\": \"Semi-Auto\",\n            \"price\": 1000000,\n            \"image\": null,\n            \"is_deleted\": false,\n            \"created_by\": 2,\n            \"updated_by\": null,\n            \"deleted_by\": null,\n            \"createdAt\": \"2024-05-31T10:00:20.307Z\",\n            \"updatedAt\": \"2024-05-31T10:00:20.307Z\",\n            \"creator\": {\n                \"id\": 2,\n                \"email\": \"superadmin@gmail.com\",\n                \"name\": \"superadmin\",\n                \"role\": \"superadmin\",\n                \"createdAt\": \"2024-05-31T10:00:20.223Z\",\n                \"updatedAt\": \"2024-06-02T03:05:21.445Z\"\n            },\n            \"updater\": null,\n            \"deleter\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get car by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTYzODU4NDIsImV4cCI6MTcxNjQ3MjI0Mn0.-qTry8oRf3_MeGb5YIXV0Bidxm6eY_QDSgJLM3Ue3jY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/cars/2",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"cars",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/cars/2",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"cars",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "633"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"279-Pj5N2JDAL0LlifNsaxmIWc2y34s\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jun 2024 03:25:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Car retrieved successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"SUPRA Y\",\n        \"category\": \"Automatic\",\n        \"price\": 100000,\n        \"image\": null,\n        \"is_deleted\": true,\n        \"created_by\": 2,\n        \"updated_by\": null,\n        \"deleted_by\": 2,\n        \"createdAt\": \"2024-05-31T10:00:20.307Z\",\n        \"updatedAt\": \"2024-05-31T11:06:16.273Z\",\n        \"creator\": {\n            \"id\": 2,\n            \"email\": \"superadmin@gmail.com\",\n            \"name\": \"superadmin\",\n            \"role\": \"superadmin\",\n            \"createdAt\": \"2024-05-31T10:00:20.223Z\",\n            \"updatedAt\": \"2024-06-02T03:05:21.445Z\"\n        },\n        \"updater\": null,\n        \"deleter\": {\n            \"id\": 2,\n            \"email\": \"superadmin@gmail.com\",\n            \"name\": \"superadmin\",\n            \"role\": \"superadmin\",\n            \"createdAt\": \"2024-05-31T10:00:20.223Z\",\n            \"updatedAt\": \"2024-06-02T03:05:21.445Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create car",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicm9sZSI6bnVsbCwiaWF0IjoxNzE2MzgyNTMyLCJleHAiOjE3MTY0Njg5MzJ9.vBPCgPNvZ6_VgLjFpYBGcIzexvSFs14BdrLqN04KMk0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Xenia",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "SUV",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "10000000",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/charl/OneDrive/Documents/Synrgy - Fullstack Web/Challenges/challenge-4/public/images/car09.min.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/api/cars",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"cars"
+							]
+						},
+						"description": "Only the user with 'admin' or 'superadmin' role can create car."
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Xenia",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "SUV",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "10000000",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/charl/OneDrive/Documents/Synrgy - Fullstack Web/Challenges/challenge-4/public/images/car04.min.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{localhost}}/api/cars",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"cars"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "329"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"149-6ppuZ80IOGCU5GMl+rsMedCHdZk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jun 2024 03:26:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Car created successfully\",\n    \"data\": {\n        \"id\": 5,\n        \"name\": \"Xenia\",\n        \"category\": \"SUV\",\n        \"price\": 10000000,\n        \"image\": \"http://localhost:3000/public\\\\uploads\\\\1717298785764.jpg\",\n        \"created_by\": 2,\n        \"updated_by\": 2,\n        \"deleted_by\": null,\n        \"is_deleted\": false,\n        \"updatedAt\": \"2024-06-02T03:26:25.774Z\",\n        \"createdAt\": \"2024-06-02T03:26:25.774Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update car",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTYzODU4NDIsImV4cCI6MTcxNjQ3MjI0Mn0.-qTry8oRf3_MeGb5YIXV0Bidxm6eY_QDSgJLM3Ue3jY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Xenia Edited",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/api/cars/2",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"cars",
+								"2"
+							]
+						},
+						"description": "Only the user with 'admin' or 'superadmin' role can update car."
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Xenia Edited",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "price",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/charl/OneDrive/Documents/Synrgy - Fullstack Web/Challenges/challenge-4/public/images/car01.min.jpg",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{localhost}}/api/cars/5",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"cars",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "336"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"150-7xVFDHOSaVlqXkFWibhjDsMmAKA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jun 2024 03:31:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Car updated successfully\",\n    \"data\": {\n        \"id\": 5,\n        \"name\": \"Xenia Edited\",\n        \"category\": \"SUV\",\n        \"price\": 10000000,\n        \"image\": \"http://localhost:3000/public\\\\uploads\\\\1717298785764.jpg\",\n        \"is_deleted\": false,\n        \"created_by\": 2,\n        \"updated_by\": 2,\n        \"deleted_by\": null,\n        \"createdAt\": \"2024-06-02T03:26:25.774Z\",\n        \"updatedAt\": \"2024-06-02T03:31:01.477Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete car",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTYzODU4NDIsImV4cCI6MTcxNjQ3MjI0Mn0.-qTry8oRf3_MeGb5YIXV0Bidxm6eY_QDSgJLM3Ue3jY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/cars/2",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"cars",
+								"2"
+							]
+						},
+						"description": "Only the user with 'admin' or 'superadmin' role can delete car."
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/cars/5",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"cars",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-buomTWIQ22rrhhmWNQEoRCroUZU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jun 2024 03:38:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Car deleted successfully\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
