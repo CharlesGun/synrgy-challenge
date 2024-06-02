@@ -37,6 +37,10 @@
 ```bash
     npx sequelize db:seed:all
 ```
+- To run app locally
+```bash
+    npm run dev
+```
 
 ## API Reference
 
